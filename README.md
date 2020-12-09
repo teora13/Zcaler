@@ -1,4 +1,4 @@
-# Zcaler Sublocation Adder/Remover
+# Zcaler Sublocations Adder/Remover
 :office: Adds or removes sublocations for existed parent locations in Zscaler platform
 
 [Zscaler](https://www.zscaler.com/) Internet Access provides secure access to external applications. 
