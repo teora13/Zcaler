@@ -1,5 +1,5 @@
 # Zcaler Sublocations Adder/Remover
-:office: Adds or removes sublocations for existed parent locations in Zscaler platform
+:office: Adds or removes sublocations for existed parent locations on Zscaler platform
 
 [Zscaler](https://www.zscaler.com/) Internet Access provides secure access to external applications. Script works through [API requests](https://help.zscaler.com/zia/api). 
 
