@@ -53,7 +53,7 @@ def postSubLocations():
 # gets info about all locations
     allOffices = json.loads(str(conn.getresponse().read().decode("utf-8")))
 # filter locations
-    filOffices = (list(filter(lambda store: 'INTERNAL-ONTARIO-OFFICE' in store['name'], allOffices)))
+    filOffices = (list(filter(lambda store: 'ONTARIO-OFFICE' in store['name'], allOffices)))
 # makes a new list with their ids
     idOffices = []
     for i in filOffices:
@@ -82,11 +82,11 @@ def postSubLocations():
 # checks every sublocation for parent location
         for sub in subsInternal:
 # if location has sublocation with necessary name than skip it and writes its name in a txt file
-            if 'INTERNAL-ONTARIO'.lower() in [str(s).lower() for s in sub.values()]:
+            if 'INTERNAL'.lower() in [str(s).lower() for s in sub.values()]:
                     fileEx = open(fileExistedOffices, 'a+')
                     fileEx.write((currentName)+'\n')
 # if location has not this sub than send POST request to create a new one
-            elif (list(filter(lambda store: 'INTERNAL-ONTARIO'.lower() not in store['name'.lower()], subsInternal))):
+            elif (list(filter(lambda store: 'INTERNAL'.lower() not in store['name'.lower()], subsInternal))):
                 while True:
                     try:
                         subconn.request("POST", "/api/v1/locations", json.dumps(payload), headers)
